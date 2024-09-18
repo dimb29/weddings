@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { SiGooglemaps } from "react-icons/si";
 import headerImage from '../../../public/image/header-img.png';
 import footerImage from '../../../public/image/footer-img.png';
 import cornerImage from "../../../public/image/corner-img.png";
@@ -69,52 +70,48 @@ export default function WeddingIndex(){
 
     return (
         <div style={backgroundWedding} className="w-screen h-full text-black bg-no-repeat bg-fixed bg-cover">
-            <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0">
+            <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0 shadow">
                 <div className='hidden sm:inline-block'>
                     <img src={headerImage} alt="" />
                 </div>
-                <p className="text-center font-bold text-2xl sm:text-3xl mb-20 sm:mb-8">THE WEDDING OF</p>
-                <div className="text-center text-[80px] sm:text-[100px] dancing-script-regular mb-20 sm:mb-8">
-                    <p className='dancing-script-regular'>Fahrul</p>
+                <p className="text-center font-bold text-2xl sm:text-3xl mb-10 sm:mb-2">THE WEDDING OF</p>
+                <div className="text-center text-[80px] sm:text-[90px] dancing-script-regular mb-20 sm:mb-2">
+                    <p>Fahrul</p>
                     <p>&</p>
                     <p>Andari</p>
                 </div>
                 <div className="text-center w-full">
-                        <div className="flex flex-row gap-4 justify-center w-5/12 mx-auto"> 
-                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                                <p className='text-4xl'>{timeLeft.days}</p>
-                                <p className=''> Hari</p>
-                            </div>
-                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                                <p className='text-4xl'>{timeLeft.hours}</p>
-                                <p className=''> Jam</p>
-                            </div>
-                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                                <p className='text-4xl'>{timeLeft.minutes}</p>
-                                <p className=''> Menit</p>
-                            </div>
-                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                                <p className='text-4xl'>{timeLeft.seconds}</p>
-                                <p className=''> Detik</p>
-                            </div>
+                    <div className="text-center py-1 px-2 sm:px-8 mb-10 sm:mb-0">
+                        <p className='text-base sm:text-xl'>
+                            Kepada Yang Terhormat Bapak/Ibu/Saudara/i
+                        </p>
+                        <p className="text-lg sm:text-2xl mb-2 font-semibold">
+                            {guest}
+                        </p>
+                    </div>
+                    <div className="flex flex-row gap-4 mb-1 justify-center w-5/12 mx-auto"> 
+                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-4xl'>{timeLeft.days}</p>
+                            <p className=''> Hari</p>
                         </div>
+                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-4xl'>{timeLeft.hours}</p>
+                            <p className=''> Jam</p>
+                        </div>
+                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-4xl'>{timeLeft.minutes}</p>
+                            <p className=''> Menit</p>
+                        </div>
+                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-4xl'>{timeLeft.seconds}</p>
+                            <p className=''> Detik</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div className="relative w-full h-min bg-white">
-                <div className="text-center py-10 sm:py-20 px-2 sm:px-8">
-                    <p className='text-base sm:text-2xl mb-2 sm:mb-5'>
-                        Kepada Yang Terhormat Bapak/Ibu/Saudara/i
-                    </p>
-                    <p className="text-xl sm:text-4xl">
-                        {guest}
-                    </p>
-                </div>
-                <img src={cornerImage} className='absolute top-16 sm:top-20 right-0 w-36 sm:w-56' alt="" />
-            </div>
-
-            <div className="w-full h-min bg-white">
-                <div className="text-center py-10 sm:py-20 px-2 sm:px-8">
+            <div className="w-full h-min bg-white border-t-2">
+                <div className="text-center py-10 sm:py-20 px-3 sm:px-8">
                     <p className='font-bold text-xl sm:text-4xl mb-2 sm:mb-5'>
                     وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
                     </p>
@@ -170,21 +167,30 @@ export default function WeddingIndex(){
                     </div>
                 </div>
             </div>
-            <div className="relative w-full py-10 sm:py-20 px-5 sm:px-10 h-screen bg-white">
-                <div className='text-center mb-10 sm:mb-20'>
-                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10'>Ngunduh Mantu</p>
+            <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-min bg-white">
+                <div className='relative text-center mb-10 sm:mb-20'>
+                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Ngunduh Mantu</p>
                     <p className='text-md sm:text-xl'>Sabtu, 28 September 2024</p>
                     <p className='text-md sm:text-xl'>13.00 WIB - selesai</p>
                     <p className='text-md sm:text-xl mb-4'>
                         Jalan Hilir RT.04/RW.04 Kembangarum, Semarang Barat
                     </p>
-                    <a href={"https://maps.app.goo.gl/dyoSYrY557ZPzp3e9"} target='_blank' className='p-3 text-sm sm:text-base rounded-full bg-gray-700 text-white hover:bg-gray-800 hover:text-gray-50'>
-                        Buka Maps
+                    <div className='mx-auto'>
+                        <iframe className='mx-auto mb-5 border-2 border-gray-700' width={"500px"} height={"300px"} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3960.148444051175!2d110.37194600000001!3d-6.991791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTknMzAuNSJTIDExMMKwMjInMTkuMCJF!5e0!3m2!1sid!2sid!4v1726663356098!5m2!1sid!2sid" />
+                    </div>
+                    <a 
+                    href={"https://maps.app.goo.gl/dyoSYrY557ZPzp3e9"}
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="flex items-center mx-auto p-2 w-fit bg-blue-500 text-white rounded hover:bg-blue-700"
+                    >
+                    <SiGooglemaps className="mr-1" /> {/* Icon with margin */}
+                    Open Google Maps
                     </a>
+                <img src={cornerImage} className='absolute transform scale-x-[-1] -bottom-20 sm:-bottom-32 -left-10 w-36 sm:w-56' alt="" />
                 </div>
-                <img src={cornerImage} className='absolute transform scale-x-[-1] top-36 left-0 w-36 sm:w-56' alt="" />
                 <div className='flex flex-col text-center mb-5 sm:mb-20'>
-                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10'>Wedding Gift</p>
+                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Wedding Gift</p>
                     <p className='text-md sm:text-xl mb-5 sm:mb-16'>
                         Doa & restu Anda di acara pernikahan kami sudah cukup sebagai hadiah, namun apabila Anda ingin memberikan lebih, maka kami akan menerima dengan senang hati dan tentunya hal ini akan melengkapi kebahagiaan kami
                     </p>
