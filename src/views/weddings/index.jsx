@@ -69,19 +69,19 @@ export default function WeddingIndex(){
     };
 
     return (
-        <div style={backgroundWedding} className="w-screen h-full text-black bg-no-repeat bg-fixed bg-cover">
-            <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0 shadow">
+        <div style={backgroundWedding} className="w-full h-full text-black">
+            <div className="w-screen h-screen sm:bg-white px-2 pt-5 sm:pt-0 shadow">
                 <div className='hidden sm:inline-block'>
                     <img src={headerImage} alt="" />
                 </div>
-                <p className="text-center font-bold text-2xl sm:text-3xl mb-10 sm:mb-2">THE WEDDING OF</p>
-                <div className="text-center text-[80px] sm:text-[90px] dancing-script-regular mb-20 sm:mb-2">
+                <p className="text-center font-bold text-2xl sm:text-3xl mb-20 sm:mb-2">THE WEDDING OF</p>
+                <div className="text-center text-[90px] dancing-script-regular mb-20 sm:mb-2">
                     <p>Fahrul</p>
                     <p>&</p>
                     <p>Andari</p>
                 </div>
                 <div className="text-center w-full">
-                    <div className="text-center py-1 px-2 sm:px-8 mb-10 sm:mb-0">
+                    <div className="text-center py-1 px-2 sm:px-8 mb-20 sm:mb-0">
                         <p className='text-base sm:text-xl'>
                             Kepada Yang Terhormat Bapak/Ibu/Saudara/i
                         </p>
@@ -110,7 +110,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
 
-            <div className="w-full h-min bg-white border-t-2">
+            <div className="w-screen h-min bg-white border-t-2">
                 <div className="text-center py-10 sm:py-20 px-3 sm:px-8">
                     <p className='font-bold text-xl sm:text-4xl mb-2 sm:mb-5'>
                     وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
@@ -124,7 +124,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
 
-            <div style={backgroundWedding} className="w-full h-min bg-white bg-no-repeat bg-fixed bg-cover">
+            <div style={backgroundWedding} className="w-screen h-min bg-white bg-no-repeat bg-fixed bg-cover">
                 <div className="text-center py-10 sm:py-36 px-5 sm:px-10">
                     <p className="font-bold text-xl sm:text-4xl mb-2 sm:mb-4 italic">
                         Assalamu'alaikum Warahmatullahi Wabarakatuh,
@@ -167,7 +167,8 @@ export default function WeddingIndex(){
                     </div>
                 </div>
             </div>
-            <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-min bg-white">
+
+            <div className="w-screen h-min py-10 sm:py-20 px-5 sm:px-10 bg-white">
                 <div className='relative text-center mb-10 sm:mb-20'>
                     <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Ngunduh Mantu</p>
                     <p className='text-md sm:text-xl'>Sabtu, 28 September 2024</p>
@@ -175,9 +176,7 @@ export default function WeddingIndex(){
                     <p className='text-md sm:text-xl mb-4'>
                         Jalan Hilir RT.04/RW.04 Kembangarum, Semarang Barat
                     </p>
-                    <div className='mx-auto'>
-                        <iframe className='mx-auto mb-5 border-2 border-gray-700' width={"500px"} height={"300px"} src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3960.148444051175!2d110.37194600000001!3d-6.991791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTknMzAuNSJTIDExMMKwMjInMTkuMCJF!5e0!3m2!1sid!2sid!4v1726663356098!5m2!1sid!2sid" />
-                    </div>
+                    <iframe className='mx-auto mb-5 border-2 border-gray-700 w-auto sm:w-96 h-52' src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3960.148444051175!2d110.37194600000001!3d-6.991791!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTknMzAuNSJTIDExMMKwMjInMTkuMCJF!5e0!3m2!1sid!2sid!4v1726663356098!5m2!1sid!2sid" />
                     <a 
                     href={"https://maps.app.goo.gl/dyoSYrY557ZPzp3e9"}
                     target="_blank" 
@@ -201,9 +200,6 @@ export default function WeddingIndex(){
                         <button onClick={copyToClipboard} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
                     </div>
                 </div>
-            </div>
-            <div className='hidden sm:inline-block'>
-                <img src={footerImage} className='w-full bg-white' />
             </div>
         </div>
     )
