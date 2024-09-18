@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import headerImage from '../../../public/image/header-img.png';
 import footerImage from '../../../public/image/footer-img.png';
 import backgroundTexture from "../../../public/image/bg-flower-texture.jpeg";
+import backgroundCard from "../../../public/image/dark-wave.jpeg";
 
 export default function WeddingIndex(){
     const [searchParams] = useSearchParams();
@@ -13,6 +14,10 @@ export default function WeddingIndex(){
       backgroundPosition: 'center',
       height: '100vh', // Make sure the div takes the full height
       width: '100%',
+    };
+    const bgCard = {
+      backgroundImage: `url(${backgroundCard})`,
+      backgroundPosition: 'center',
     };
     const calculateTimeLeft = () => {
         const weddingDate = new Date('2024-09-28T13:00:00'); // Set your wedding date and time
@@ -180,10 +185,10 @@ export default function WeddingIndex(){
                     <p className='text-md sm:text-xl mb-5 sm:mb-16'>
                         Doa & restu Anda di acara pernikahan kami sudah cukup sebagai hadiah, namun apabila Anda ingin memberikan lebih, maka kami akan menerima dengan senang hati dan tentunya hal ini akan melengkapi kebahagiaan kami
                     </p>
-                    <div className='p-3 rounded-lg mx-auto bg-gray-700 text-white w-full md:w-1/2 lg:w-1/2 xl:w-4/12'>
-                    <p className='text-md sm:text-xl my-2'>BNI</p>
-                    <p className='text-md sm:text-xl my-2'>FAHRUL WIBOWO WICAKSONO</p>
-                    <p className='text-md sm:text-xl my-2'>1334974716</p>
+                    <div style={bgCard} className='p-3 rounded-lg mx-auto text-white w-full md:w-1/2 lg:w-1/2 xl:w-4/12'>
+                        <p className='text-md sm:text-xl my-2'>BNI</p>
+                        <p className='text-md sm:text-xl my-2'>FAHRUL WIBOWO WICAKSONO</p>
+                        <p className='text-md sm:text-xl my-2'>1334974716</p>
                         <button onClick={copyToClipboard} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
                     </div>
                 </div>
