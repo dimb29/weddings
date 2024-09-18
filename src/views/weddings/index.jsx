@@ -2,10 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import headerImage from '../../../public/image/header-img.png';
 import footerImage from '../../../public/image/footer-img.png';
+import backgroundTexture from "../../../public/image/bg-flower-texture.jpeg";
 
 export default function WeddingIndex(){
     const [searchParams] = useSearchParams();
     const guest = searchParams.get('guest');
+    const backgroundWedding = {
+      backgroundImage: `url(${backgroundTexture})`,
+      backgroundSize: 'cover', // or 'contain' depending on your needs
+      backgroundPosition: 'center',
+      height: '100vh', // Make sure the div takes the full height
+      width: '100%',
+    };
     const calculateTimeLeft = () => {
         const weddingDate = new Date('2024-09-28T13:00:00'); // Set your wedding date and time
         const now = new Date();
@@ -54,7 +62,7 @@ export default function WeddingIndex(){
     };
 
     return (
-        <div className="w-screen h-full text-black bg-flower-texture bg-no-repeat bg-fixed bg-cover">
+        <div style={backgroundWedding} className="w-screen h-full text-black bg-no-repeat bg-fixed bg-cover">
             <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0">
                 <div className='hidden sm:inline-block'>
                     <img src={headerImage} alt="" />
@@ -112,7 +120,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
 
-            <div className="w-full h-min bg-white bg-flower-texture bg-no-repeat bg-fixed bg-cover">
+            <div style={backgroundWedding} className="w-full h-min bg-white bg-no-repeat bg-fixed bg-cover">
                 <div className="text-center py-10 sm:py-36 px-5 sm:px-10">
                     <p className="font-bold text-xl sm:text-4xl mb-2 sm:mb-4 italic">
                         Assalamu'alaikum Warahmatullahi Wabarakatuh,
