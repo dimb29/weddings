@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import headerImage from '../../../public/image/header-img.png';
+import footerImage from '../../../public/image/footer-img.png';
 
 export default function WeddingIndex(){
     const [searchParams] = useSearchParams();
@@ -55,7 +57,7 @@ export default function WeddingIndex(){
         <div className="w-screen h-full text-black bg-flower-texture bg-no-repeat bg-fixed bg-cover">
             <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0">
                 <div className='hidden sm:inline-block'>
-                    <img src="../public/image/header-img.png" alt="" />
+                    <img src={headerImage} alt="" />
                 </div>
                 <p className="text-center font-bold text-2xl sm:text-3xl mb-20 sm:mb-8">THE WEDDING OF</p>
                 <div className="text-center text-[80px] sm:text-[100px] dancing-script-regular mb-20 sm:mb-8">
@@ -179,7 +181,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
             <div className='hidden sm:inline-block'>
-                <img src="../public/image/footer-img.png" className='w-full bg-white' />
+                <img src={footerImage} className='w-full bg-white' />
             </div>
         </div>
     )
