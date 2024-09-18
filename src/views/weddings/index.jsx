@@ -1,0 +1,186 @@
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
+
+export default function WeddingIndex(){
+    const [searchParams] = useSearchParams();
+    const guest = searchParams.get('guest');
+    const calculateTimeLeft = () => {
+        const weddingDate = new Date('2024-09-28T13:00:00'); // Set your wedding date and time
+        const now = new Date();
+        const difference = weddingDate - now;
+        let timeLeft = {};
+
+        if (difference > 0) {
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+                seconds: Math.floor((difference % (1000 * 60)) / 1000),
+            };
+        }else{
+            timeLeft = {
+                days: 0,
+                hours: 0,
+                minutes: 0,
+                seconds: 0,
+            }
+        }
+
+        return timeLeft;
+    };
+
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setTimeLeft(calculateTimeLeft());
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
+    const [value, setValue] = useState('1334974716');
+  
+    const copyToClipboard = () => {
+      navigator.clipboard.writeText(value)
+        .then(() => {
+          alert('Nomor rekening telah disalin: ' + value);
+        })
+        .catch(err => {
+          alert('Terjadi kesalahan saat menyalin: ', err);
+        });
+    };
+
+    return (
+        <div className="w-screen h-full text-black bg-flower-texture bg-no-repeat bg-fixed bg-cover">
+            <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0">
+                <div className='hidden sm:inline-block'>
+                    <img src="../public/image/header-img.png" alt="" />
+                </div>
+                <p className="text-center font-bold text-2xl sm:text-3xl mb-20 sm:mb-8">THE WEDDING OF</p>
+                <div className="text-center text-[80px] sm:text-[100px] dancing-script-regular mb-20 sm:mb-8">
+                    <p className='dancing-script-regular'>Fahrul</p>
+                    <p>&</p>
+                    <p>Andari</p>
+                </div>
+                <div className="text-center w-full">
+                        <div className="flex flex-row gap-4 justify-center w-5/12 mx-auto"> 
+                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                                <p className='text-4xl'>{timeLeft.days}</p>
+                                <p className=''> Hari</p>
+                            </div>
+                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                                <p className='text-4xl'>{timeLeft.hours}</p>
+                                <p className=''> Jam</p>
+                            </div>
+                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                                <p className='text-4xl'>{timeLeft.minutes}</p>
+                                <p className=''> Menit</p>
+                            </div>
+                            <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
+                                <p className='text-4xl'>{timeLeft.seconds}</p>
+                                <p className=''> Detik</p>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div className="w-full h-min bg-white">
+                <div className="text-center py-10 sm:py-20 px-2 sm:px-8">
+                    <p className='text-base sm:text-2xl mb-2 sm:mb-5'>
+                        Kepada Yang Terhormat Bapak/Ibu/Saudara/i
+                    </p>
+                    <p className="text-xl sm:text-4xl">
+                        {guest}
+                    </p>
+                </div>
+            </div>
+
+            <div className="w-full h-min bg-white">
+                <div className="text-center py-10 sm:py-20 px-2 sm:px-8">
+                    <p className='font-bold text-xl sm:text-4xl mb-2 sm:mb-5'>
+                    وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
+                    </p>
+                    <p className='text-sm sm:text-xl'>
+                    "Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                    </p>
+                    <p className='text-base sm:text-xl font-semibold'>
+                    Q.R Surah Ar Rum:21
+                    </p>
+                </div>
+            </div>
+
+            <div className="w-full h-min bg-white bg-flower-texture bg-no-repeat bg-fixed bg-cover">
+                <div className="text-center py-10 sm:py-36 px-5 sm:px-10">
+                    <p className="font-bold text-xl sm:text-4xl mb-2 sm:mb-4 italic">
+                        Assalamu'alaikum Warahmatullahi Wabarakatuh,
+                    </p>
+                    <p className="text-base sm:text-xl mb-10 sm:mb-20">
+                        Dengan penuh rasa syukur dan kebahagiaan, kami mengundang Bapak/Ibu/Saudara/Saudari untuk menghadiri acara ngunduh mantu kami.
+                    </p>
+                    <div className='flex flex-col sm:flex-row'>
+                        <div className='w-full sm:w-5/12 text-center'>
+                            <p className='font-bold mb-1 sm:mb-5 text-6xl sm:text-7xl dancing-script-regular'>
+                                Fahrul
+                            </p>
+                            <p className='text-2xl sm:text-3xl mb-1 sm:mb-5 font-semibold'>
+                                Fahrul Wibowo Wicaksono
+                            </p>
+                            <p className='text-base sm:text-xl'>
+                                Putra bapak Purwanto dan ibu Aniningsih
+                            </p>
+                            <p className='text-sm sm:text-lg'>
+                                Jalan Hilir RT.04/RW.04 Kembangarum, Semarang Barat
+                            </p>
+                        </div>
+                        <div className='w-full sm:w-2/12 my-10 sm:my-0 content-center'>
+                            <p className='font-bold text-7xl dancing-script-regular'>&</p>
+                        </div>
+                        <div className='w-full sm:w-5/12 text-center'>
+                            <p className='font-bold mb-1 sm:mb-5 text-6xl sm:text-7xl dancing-script-regular'>
+                                Andari
+                            </p>
+                            <p className='text-2xl sm:text-3xl mb-1 sm:mb-5 font-semibold'>
+                                Andari Dwi Rahmawati
+                            </p>
+                            <p className='text-base sm:text-xl'>
+                                Putri bapak Gono Sutrisno dan ibu Mariyem
+                            </p>
+                            <p className='text-sm sm:text-lg'>
+                                Jalan Wologito V No 70, RT.02/RW.01 Kembangarum, Semarang Barat
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-screen bg-white">
+                <div className='text-center mb-10 sm:mb-20'>
+                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10'>Ngunduh Mantu</p>
+                    <p className='text-md sm:text-xl'>Sabtu, 28 September 2024</p>
+                    <p className='text-md sm:text-xl'>13.00 WIB - selesai</p>
+                    <p className='text-md sm:text-xl mb-4'>
+                        Jalan Hilir RT.04/RW.04 Kembangarum, Semarang Barat
+                    </p>
+                    <a href={"https://maps.app.goo.gl/dyoSYrY557ZPzp3e9"} target='_blank' className='p-3 text-sm sm:text-base rounded-full bg-gray-700 text-white hover:bg-gray-800 hover:text-gray-50'>
+                        Buka Maps
+                    </a>
+                </div>
+                <div className='flex flex-col text-center mb-5 sm:mb-20'>
+                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10'>Wedding Gift</p>
+                    <p className='text-md sm:text-xl mb-5 sm:mb-16'>
+                        Doa & restu Anda di acara pernikahan kami sudah cukup sebagai hadiah, namun apabila Anda ingin memberikan lebih, maka kami akan menerima dengan senang hati dan tentunya hal ini akan melengkapi kebahagiaan kami
+                    </p>
+                    <div className='p-3 rounded-lg mx-auto bg-gray-700 text-white w-full md:w-1/2 lg:w-1/2 xl:w-4/12'>
+                    <p className='text-md sm:text-xl my-2'>BNI</p>
+                    <p className='text-md sm:text-xl my-2'>FAHRUL WIBOWO WICAKSONO</p>
+                    <p className='text-md sm:text-xl my-2'>1334974716</p>
+                        <button onClick={copyToClipboard} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
+                    </div>
+                </div>
+            </div>
+            <div className='hidden sm:inline-block'>
+                <img src="../public/image/footer-img.png" className='w-full bg-white' />
+            </div>
+        </div>
+    )
+}
