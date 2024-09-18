@@ -5,7 +5,7 @@ import Routes from "./routes";
 
 export default function App() {
   return (
-      <div className="h-screen bg-gray-400">
+      <div className="h-full bg-white">
         {/* <nav className="bg-gray-900 text-white w-full">
             <div className="w-screen px-4 py-2 flex items-center justify-between">
                 <Link to="/" className="text-white mx-8">HOME</Link>
