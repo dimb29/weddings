@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import headerImage from '../../../public/image/header-img.png';
 import footerImage from '../../../public/image/footer-img.png';
+import cornerImage from "../../../public/image/corner-img.png";
 import backgroundTexture from "../../../public/image/bg-flower-texture.jpeg";
 import backgroundCard from "../../../public/image/dark-wave.jpeg";
 
@@ -100,7 +101,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
 
-            <div className="w-full h-min bg-white">
+            <div className="relative w-full h-min bg-white">
                 <div className="text-center py-10 sm:py-20 px-2 sm:px-8">
                     <p className='text-base sm:text-2xl mb-2 sm:mb-5'>
                         Kepada Yang Terhormat Bapak/Ibu/Saudara/i
@@ -109,6 +110,7 @@ export default function WeddingIndex(){
                         {guest}
                     </p>
                 </div>
+                <img src={cornerImage} className='absolute top-16 sm:top-20 right-0 w-36 sm:w-56' alt="" />
             </div>
 
             <div className="w-full h-min bg-white">
@@ -168,7 +170,7 @@ export default function WeddingIndex(){
                     </div>
                 </div>
             </div>
-            <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-screen bg-white">
+            <div className="relative w-full py-10 sm:py-20 px-5 sm:px-10 h-screen bg-white">
                 <div className='text-center mb-10 sm:mb-20'>
                     <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10'>Ngunduh Mantu</p>
                     <p className='text-md sm:text-xl'>Sabtu, 28 September 2024</p>
@@ -180,6 +182,7 @@ export default function WeddingIndex(){
                         Buka Maps
                     </a>
                 </div>
+                <img src={cornerImage} className='absolute transform scale-x-[-1] top-36 left-0 w-36 sm:w-56' alt="" />
                 <div className='flex flex-col text-center mb-5 sm:mb-20'>
                     <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10'>Wedding Gift</p>
                     <p className='text-md sm:text-xl mb-5 sm:mb-16'>
