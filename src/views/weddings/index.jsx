@@ -81,11 +81,11 @@ export default function WeddingIndex(){
                     <p>Andari</p>
                 </div>
                 <div className="text-center w-full">
-                    <div className="text-center py-1 px-2 sm:px-8 mb-10 sm:mb-0">
-                        <p className='text-base sm:text-xl'>
+                    <div className="text-center pb-1 px-2 sm:px-8 mb-10 sm:mb-0">
+                        <p className='text-base sm:text-xl mb-1'>
                             Kepada Yang Terhormat Bapak/Ibu/Saudara/i
                         </p>
-                        <p className="text-lg sm:text-2xl mb-2 font-semibold">
+                        <p className="text-3xl mb-2 font-semibold">
                             {guest}
                         </p>
                     </div>
@@ -169,7 +169,7 @@ export default function WeddingIndex(){
             </div>
             <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-min bg-white">
                 <div className='relative text-center mb-10 sm:mb-20'>
-                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Ngunduh Mantu</p>
+                    <p className='text-3xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Ngunduh Mantu</p>
                     <p className='text-md sm:text-xl'>Sabtu, 28 September 2024</p>
                     <p className='text-md sm:text-xl'>13.00 WIB - selesai</p>
                     <p className='text-md sm:text-xl mb-4'>
@@ -188,7 +188,7 @@ export default function WeddingIndex(){
                 <img src={cornerImage} className='absolute transform scale-x-[-1] -bottom-20 sm:-bottom-32 -left-10 w-36 sm:w-56' alt="" />
                 </div>
                 <div className='flex flex-col text-center mb-5 sm:mb-20'>
-                    <p className='text-2xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Wedding Gift</p>
+                    <p className='text-3xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Wedding Gift</p>
                     <p className='text-md sm:text-xl mb-5 sm:mb-16'>
                         Doa & restu Anda di acara pernikahan kami sudah cukup sebagai hadiah, namun apabila Anda ingin memberikan lebih, maka kami akan menerima dengan senang hati dan tentunya hal ini akan melengkapi kebahagiaan kami
                     </p>
