@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { SiGooglemaps } from "react-icons/si";
-import headerImage from '../../../public/image/header-img.png';
-import footerImage from '../../../public/image/footer-img.png';
-import cornerImage from "../../../public/image/corner-img.png";
-import backgroundTexture from "../../../public/image/bg-flower-texture.jpeg";
-import backgroundCard from "../../../public/image/dark-wave.jpeg";
+import headerImage from '/image/header-img.png';
+import footerImage from '/image/footer-img.png';
+import cornerImage from "/image/corner-img.png";
+import backgroundTexture from "/image/bg-flower-texture.jpeg";
+import backgroundCard from "/image/dark-wave.jpeg";
+import cinematicWeddingAudio from "/audio/Nyoman Paul, Andi Rianto  The Way You Look At Me (Official Music Video).mp3";
 
 export default function WeddingIndex(){
     const [searchParams] = useSearchParams();
     const guest = searchParams.get('guest');
+    const [isAtTop, setIsAtTop] = useState(true);
+
     const backgroundWedding = {
       backgroundImage: `url(${backgroundTexture})`,
       backgroundSize: 'cover', // or 'contain' depending on your needs
@@ -17,10 +20,15 @@ export default function WeddingIndex(){
       height: '100vh', // Make sure the div takes the full height
       width: '100%',
     };
+
     const bgCard = {
       backgroundImage: `url(${backgroundCard})`,
       backgroundPosition: 'center',
     };
+
+    const audioRef = useRef(null);
+    const [isMuted, setIsMuted] = useState(true);
+
     const calculateTimeLeft = () => {
         const weddingDate = new Date('2024-09-28T13:00:00'); // Set your wedding date and time
         const now = new Date();
@@ -56,6 +64,23 @@ export default function WeddingIndex(){
         return () => clearInterval(timer);
     }, []);
 
+    useEffect(() => {
+      const playAudio = async () => {
+        try {
+          await audioRef.current.play();
+        } catch (error) {
+          console.log("Audio playback failed:", error);
+        }
+      };
+  
+      playAudio();
+    }, [isMuted]);
+
+    const toggleMute = () => {
+        setIsMuted((prev) => !prev)
+        audioRef.current.muted = false
+    }
+
     const [value, setValue] = useState('1334974716');
   
     const copyToClipboard = () => {
@@ -68,14 +93,52 @@ export default function WeddingIndex(){
         });
     };
 
+    const handleScroll = () => {
+      if (window.scrollY <= 5) {
+        setIsAtTop(true);
+        document.body.style.overflow = 'hidden'; // Disable scrolling
+      } else {
+        setIsAtTop(false);
+        document.body.style.overflow = 'auto'; // Enable scrolling
+      }
+    };
+
+    useEffect(() => {
+
+        // Scroll to the top on component mount
+        window.scrollTo(0, 0);
+
+        window.addEventListener('scroll', handleScroll);
+        
+        // Cleanup listener on unmount
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, []);
+
+    const scrollToSection = () => {
+        const section = document.getElementById('target-section');
+        section.scrollIntoView({ behavior: 'smooth' });
+    
+        // Enable scrolling after clicking the button
+        document.body.style.overflow = 'auto';
+
+        toggleMute()
+    };
+
+    useEffect(() => {
+        // Scroll to the top on refresh
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div style={backgroundWedding} className="w-screen h-full text-black bg-no-repeat bg-fixed bg-cover">
             <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0 shadow">
                 <div className='hidden sm:inline-block'>
                     <img src={headerImage} alt="" />
                 </div>
-                <p className="text-center font-bold text-2xl sm:text-3xl mb-10 sm:mb-2">THE WEDDING OF</p>
-                <div className="text-center text-[80px] sm:text-[90px] dancing-script-regular mb-20 sm:mb-2">
+                <p className="text-center font-bold text-2xl sm:text-3xl mb-10 sm:mb-0">THE WEDDING OF</p>
+                <div className="text-center text-[80px] sm:text-[80px] dancing-script-regular mb-20 sm:mb-0">
                     <p>Fahrul</p>
                     <p>&</p>
                     <p>Andari</p>
@@ -88,6 +151,7 @@ export default function WeddingIndex(){
                         <p className="text-3xl mb-2 font-semibold">
                             {guest}
                         </p>
+                        <button onClick={scrollToSection} className='text-white mb-1 bg-gray-800'>Buka Undangan</button>
                     </div>
                     <div className="flex flex-row gap-4 mb-1 justify-center w-5/12 mx-auto"> 
                         <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
@@ -110,7 +174,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
 
-            <div className="w-full h-min bg-white border-t-2">
+            <div id="target-section" className="w-full h-min bg-white border-t-2">
                 <div className="text-center py-10 sm:py-20 px-3 sm:px-8">
                     <p className='font-bold text-xl sm:text-4xl mb-2 sm:mb-5'>
                     وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
@@ -199,6 +263,11 @@ export default function WeddingIndex(){
                         <button onClick={copyToClipboard} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
                     </div>
                 </div>
+
+                <audio ref={audioRef} autoPlay loop>
+                <source src={cinematicWeddingAudio} type="audio/mpeg" />
+                Your browser does not support the audio element.
+                </audio>
             </div>
             <div className='hidden sm:inline-block'>
                 <img src={footerImage} className='w-full bg-white' />
