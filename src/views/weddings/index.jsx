@@ -137,14 +137,14 @@ export default function WeddingIndex(){
                 <div className='hidden sm:inline-block'>
                     <img src={headerImage} alt="" />
                 </div>
-                <p className="text-center font-bold text-2xl sm:text-3xl mb-10 sm:mb-0">THE WEDDING OF</p>
-                <div className="text-center text-[80px] sm:text-[80px] dancing-script-regular mb-20 sm:mb-0">
+                <p className="text-center font-bold text-2xl sm:text-3xl mb-5 sm:mb-0">THE WEDDING OF</p>
+                <div className="text-center text-[70px] sm:text-[80px] dancing-script-regular mb-10 sm:mb-0">
                     <p>Fahrul</p>
                     <p>&</p>
                     <p>Andari</p>
                 </div>
                 <div className="text-center w-full">
-                    <div className="text-center pb-1 px-2 sm:px-8 mb-10 sm:mb-0">
+                    <div className="text-center pb-1 px-2 sm:px-8 mb-5 sm:mb-0">
                         <p className='text-base sm:text-xl mb-1'>
                             Kepada Yang Terhormat Bapak/Ibu/Saudara/i
                         </p>
