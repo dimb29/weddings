@@ -6,7 +6,7 @@ import footerImage from '/image/footer-img.png';
 import cornerImage from "/image/corner-img.png";
 import backgroundTexture from "/image/bg-flower-texture.jpeg";
 import backgroundCard from "/image/dark-wave.jpeg";
-import cinematicWeddingAudio from "/audio/Nyoman Paul, Andi Rianto  The Way You Look At Me (Official Music Video).mp3";
+import cinematicWeddingAudio from "/audio/bermuara.mp3";
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 
 const FadeInUp = ({ children, delay = 0 }) => {
