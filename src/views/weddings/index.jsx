@@ -426,7 +426,7 @@ export default function WeddingIndex(){
                             </FadeInRight>
                             <FadeInRight delay={0.4}>
                                 <p className='text-2xl sm:text-3xl mb-1 sm:mb-5 font-semibold'>
-                                    Ria Fatimatuz Zumaro
+                                    Ria Fatimatuz Zumaroh
                                 </p>
                             </FadeInRight>
                             <FadeInRight delay={0.5}>
