@@ -154,21 +154,21 @@ export default function WeddingIndex(){
                         </p>
                         <button onClick={scrollToSection} className='text-white mb-1 bg-gray-800'>Buka Undangan</button>
                     </div>
-                    <div className="flex flex-row gap-4 mb-1 justify-center w-5/12 mx-auto"> 
-                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                            <p className='text-4xl'>{timeLeft.days}</p>
+                    <div className="flex flex-row gap-4 mb-1 justify-center mx-auto px-1 sm:px-5"> 
+                        <div className='w-20 sm:w-24 py-3 text-center border rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-3xl sm:text-4xl'>{timeLeft.days}</p>
                             <p className=''> Hari</p>
                         </div>
-                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                            <p className='text-4xl'>{timeLeft.hours}</p>
+                        <div className='w-20 sm:w-24 py-3 text-center border rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-3xl sm:text-4xl'>{timeLeft.hours}</p>
                             <p className=''> Jam</p>
                         </div>
-                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                            <p className='text-4xl'>{timeLeft.minutes}</p>
+                        <div className='w-20 sm:w-24 sm:px-6 py-3 text-center border rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-3xl sm:text-4xl'>{timeLeft.minutes}</p>
                             <p className=''> Menit</p>
                         </div>
-                        <div className='px-6 py-3 text-center rounded-lg shadow-lg bg-white bg-opacity-15'>
-                            <p className='text-4xl'>{timeLeft.seconds}</p>
+                        <div className='w-20 sm:w-24 sm:px-6 py-3 text-center border rounded-lg shadow-lg bg-white bg-opacity-15'>
+                            <p className='text-3xl sm:text-4xl'>{timeLeft.seconds}</p>
                             <p className=''> Detik</p>
                         </div>
                     </div>
@@ -238,7 +238,7 @@ export default function WeddingIndex(){
                     <p className='text-md sm:text-xl'>Sabtu, 25 September 2025</p>
                     <p className='text-md sm:text-xl mb-8'>07.00 WIB - selesai</p>
 
-                    <img src={cornerImage} className='absolute transform -right-10 w-36 sm:w-56' alt="" />
+                    <img src={cornerImage} className='absolute transform -right-5 sm:-right-10 w-36 sm:w-56' alt="" />
 
                     <p className='text-3xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Resepsi</p>
                     <p className='text-md sm:text-xl'>Sabtu, 25 September 2025</p>
@@ -264,17 +264,19 @@ export default function WeddingIndex(){
                     <p className='text-md sm:text-xl mb-5 sm:mb-16'>
                         Doa & restu Anda di acara pernikahan kami sudah cukup sebagai hadiah, namun apabila Anda ingin memberikan lebih, maka kami akan menerima dengan senang hati dan tentunya hal ini akan melengkapi kebahagiaan kami
                     </p>
-                    <div style={bgCard} className='p-3 rounded-lg mx-auto text-white w-full md:w-1/2 lg:w-1/2 xl:w-4/12'>
-                        <p className='text-md sm:text-xl my-2'>MANDIRI</p>
-                        <p className='text-md sm:text-xl my-2'>DIMAS BAGAS PRAKOSO</p>
-                        <p className='text-md sm:text-xl my-2'>1360032026939</p>
-                        <button onClick={() => copyToClipboard('1360032026939')} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
-                    </div>
-                    <div style={bgCard} className='p-3 mt-4 rounded-lg mx-auto text-white w-full md:w-1/2 lg:w-1/2 xl:w-4/12'>
-                        <p className='text-md sm:text-xl my-2'>MANDIRI</p>
-                        <p className='text-md sm:text-xl my-2'>RIA FATIMATUZ ZUMARO</p>
-                        <p className='text-md sm:text-xl my-2'>1360033082436</p>
-                        <button onClick={() => copyToClipboard('1360033082436')} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2 sm:flex-row">
+                        <div style={bgCard} className='p-3 rounded-lg mx-auto text-white w-full'>
+                            <p className='text-md sm:text-xl my-2'>BCA DIGITAL</p>
+                            <p className='text-md sm:text-xl my-2'>DIMAS BAGAS PRAKOSO</p>
+                            <p className='text-md sm:text-xl my-2'>007986162835</p>
+                            <button onClick={() => copyToClipboard('007986162835')} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
+                        </div>
+                        <div style={bgCard} className='p-3 rounded-lg mx-auto text-white w-full'>
+                            <p className='text-md sm:text-xl my-2'>MANDIRI</p>
+                            <p className='text-md sm:text-xl my-2'>RIA FATIMATUZ ZUMARO</p>
+                            <p className='text-md sm:text-xl my-2'>1360033082436</p>
+                            <button onClick={() => copyToClipboard('1360033082436')} className="p-2 text-md rounded-full text-gray-700 bg-white my-2">Salin Nomor Rekening</button>
+                        </div>
                     </div>
                 </div>
 
