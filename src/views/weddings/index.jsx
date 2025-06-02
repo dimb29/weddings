@@ -235,13 +235,13 @@ export default function WeddingIndex(){
             <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-min bg-white">
                 <div className='relative text-center mb-10 sm:mb-20'>
                     <p className='text-3xl sm:text-4xl font-bold mb-2 sm:mb-8 dancing-script-regular'>Akad Nikah</p>
-                    <p className='text-md sm:text-xl'>Sabtu, 25 September 2025</p>
+                    <p className='text-md sm:text-xl'>Kamis, 25 September 2025</p>
                     <p className='text-md sm:text-xl mb-8'>07.00 WIB - selesai</p>
 
                     <img src={cornerImage} className='absolute transform -right-5 sm:-right-10 w-36 sm:w-56' alt="" />
 
                     <p className='text-3xl sm:text-4xl font-bold mb-2 sm:mb-10 dancing-script-regular'>Resepsi</p>
-                    <p className='text-md sm:text-xl'>Sabtu, 25 September 2025</p>
+                    <p className='text-md sm:text-xl'>Kamis, 25 September 2025</p>
                     <p className='text-md sm:text-xl mb-8'>12.00 WIB - selesai</p>
                     <p className='text-md sm:text-xl mb-4'>
                         Jl. Jend. Urip Sumoharjo, Wonosari, Ngaliyan
