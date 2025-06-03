@@ -300,10 +300,10 @@ export default function WeddingIndex(){
     }, []);
 
     return (
-        <div style={backgroundWedding} className="w-screen h-full text-black bg-no-repeat bg-fixed bg-cover">
-            <div className="w-full h-screen sm:bg-white pt-5 sm:pt-0 shadow">
+        <div className="w-screen h-full text-black bg-fixed bg-cover bg-[url('/image/bg-flower-texture.jpeg')]">
+            <div className="w-full h-screen sm:bg-white bg-opacity-0 sm:bg-opacity-100 pt-5 sm:pt-0 shadow">
                 <div className='hidden sm:inline-block'>
-                    <img src={headerImage} alt="" />
+                    <img src={headerImage} alt="" className="opacity-60" />
                 </div>
                 <FadeInUp delay={0}>
                     <p className="text-center font-bold text-2xl mb-5 sm:mb-0">THE WEDDING OF</p>
@@ -358,7 +358,7 @@ export default function WeddingIndex(){
                 </div>
             </div>
 
-            <div id="target-section" className="w-full h-min bg-white border-t-2">
+            <div id="target-section" className="w-full h-min bg-white border-t-2 bg-opacity-60">
                     <div className="text-center py-10 sm:py-20 px-3 sm:px-8">
                         <FadeInLeft delay={0.3}>
                             <p className='font-bold text-xl sm:text-4xl mb-2 sm:mb-5'>
@@ -378,7 +378,7 @@ export default function WeddingIndex(){
                     </div>
             </div>
 
-            <div style={backgroundWedding} className="w-full h-min bg-white bg-no-repeat bg-fixed bg-cover">
+            <div className="w-full h-min bg-white bg-opacity-0">
                 <div className="text-center py-10 sm:py-36 px-5 sm:px-10">
                     <FadeInDown delay={0.3}>
                         <p className="font-bold text-xl sm:text-4xl mb-2 sm:mb-4 italic">
@@ -443,7 +443,7 @@ export default function WeddingIndex(){
                     </div>
                 </div>
             </div>
-            <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-min bg-white">
+            <div className="w-full py-10 sm:py-20 px-5 sm:px-10 h-min bg-white bg-opacity-60">
                 <div className='relative text-center mb-10 sm:mb-20'>
                     <FadeInUp delay={0.3}>
                         <p className='text-3xl sm:text-4xl font-bold mb-2 sm:mb-8 dancing-script-regular z-10'>Akad Nikah</p>
@@ -523,7 +523,7 @@ export default function WeddingIndex(){
                 </audio>
             </div>
             <div className='hidden sm:inline-block'>
-                <img src={footerImage} className='w-full bg-white' />
+                <img src={footerImage} className='w-full bg-white opacity-60' />
             </div>
         </div>
     )
