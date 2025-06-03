@@ -404,12 +404,12 @@ export default function WeddingIndex(){
                             </FadeInLeft>
                             <FadeInLeft delay={0.5}>
                                 <p className='text-base sm:text-xl'>
-                                    Putra bapak Purwanto dan ibu Aniningsih
+                                    Putra Bapak Purwanto dan Ibu Aniningsih
                                 </p>
                             </FadeInLeft>
                             <FadeInLeft delay={0.6}>
                                 <p className='text-sm sm:text-lg'>
-                                    Jalan Hilir RT.04/RW.04 Kembangarum, Semarang Barat
+                                    Jalan Hilir, Kembangarum, Semarang Barat
                                 </p>
                             </FadeInLeft>
                         </div>
@@ -431,7 +431,7 @@ export default function WeddingIndex(){
                             </FadeInRight>
                             <FadeInRight delay={0.5}>
                                 <p className='text-base sm:text-xl'>
-                                    Putri bapak Khudori dan ibu Fathonah
+                                    Putri Bapak Khudori dan Ibu Fatonah
                                 </p>
                             </FadeInRight>
                             <FadeInRight delay={0.6}>
