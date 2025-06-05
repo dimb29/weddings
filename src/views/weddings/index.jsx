@@ -62,7 +62,7 @@ const QrCodeGenerator = ({ url }) => {
       <QRCodeCanvas
         value={url}
         size={150}
-        bgColor={"#ffffff"}
+        bgColor="rgba(0,0,0,0)"
         fgColor={"#000000"}
         level={"H"}
         includeMargin={true}
