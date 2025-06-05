@@ -501,7 +501,9 @@ export default function WeddingIndex(){
                         Open Google Maps
                         </a>
                     </FadeInUp>
-                    <p className="mt-4">Atau scan QRCode dibawah ini:</p>
+                    <FadeInUp delay={1.1}>
+                        <p className="text-md sm:text-xl mt-4">Atau scan QRCode dibawah ini:</p>
+                    </FadeInUp>
                     <FadeInUp delay={1.1} className="flex justify-center mx-auto">
                         <QrCodeGenerator url="https://maps.app.goo.gl/7mHbH6sivCX6TZgWA" className=""></QrCodeGenerator>
                     </FadeInUp>
