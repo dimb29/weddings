@@ -317,9 +317,9 @@ export default function WeddingIndex(){
 
     return (
         <div className="w-screen h-full text-black bg-fixed bg-cover bg-[url('/image/bg-flower-texture.jpeg')]">
-            <div className="w-full h-screen sm:bg-white bg-opacity-0 sm:bg-opacity-100 pt-5 sm:pt-0 shadow">
-                <div className='hidden sm:inline-block'>
-                    <img src={headerImage} alt="" className="opacity-60" />
+            <div className="w-full h-screen pt-5 sm:pt-0 shadow">
+                <div className='inline-block w-full'>
+                    <img src={headerImage} alt="" className="w-full opacity-60 -mt-5 sm:-mt-0" />
                 </div>
                 <FadeInUp delay={0}>
                     <p className="text-center font-bold text-2xl mb-5 sm:mb-0">THE WEDDING OF</p>
@@ -488,7 +488,13 @@ export default function WeddingIndex(){
                         </p>
                     </FadeInUp>
                     <FadeInUp delay={1.1}>
-                        <iframe className='mx-auto mb-5 border-2 border-gray-700 w-min sm:w-96 h-56' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1035.7048254693862!2d110.31048696599059!3d-6.972818591360223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e705fe65fb8dcd7%3A0x902fa683a6ad3cad!2smusholla%20at%20thohirin!5e0!3m2!1sen!2sid!4v1748854478172!5m2!1sen!2sid" />
+                    <iframe
+                        className="mx-auto mb-5 border-2 border-gray-700 w-full max-w-md h-56"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1035.7048254693862!2d110.31048696599059!3d-6.972818591360223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e705fe65fb8dcd7%3A0x902fa683a6ad3cad!2smusholla%20at%20thohirin!5e0!3m2!1sen!2sid!4v1748854478172!5m2!1sen!2sid"
+                        allowFullScreen=""
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    />
                     </FadeInUp>
                     <FadeInUp delay={1.1}>
                         <a 
