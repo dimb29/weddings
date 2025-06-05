@@ -8,6 +8,7 @@ import backgroundTexture from "/image/bg-flower-texture.jpeg";
 import backgroundCard from "/image/dark-wave.jpeg";
 import cinematicWeddingAudio from "/audio/bermuara.mp3";
 import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { QRCodeCanvas } from 'qrcode.react';
 
 const FadeInUp = ({ children, delay = 0 }) => {
   return (
@@ -54,6 +55,21 @@ const FadeInDown = ({ children, delay = 0 }) => (
     {children}
   </motion.div>
 );
+
+const QrCodeGenerator = ({ url }) => {
+  return (
+    <div className="flex justify-center p-4 text-center">
+      <QRCodeCanvas
+        value={url}
+        size={150}
+        bgColor={"#ffffff"}
+        fgColor={"#000000"}
+        level={"H"}
+        includeMargin={true}
+      />
+    </div>
+  );
+};
 
 // const FadeInUp = ({ children, delay = 0 }) => {
 //   const ref = useRef(null);
@@ -474,7 +490,7 @@ export default function WeddingIndex(){
                     <FadeInUp delay={1.1}>
                         <iframe className='mx-auto mb-5 border-2 border-gray-700 w-min sm:w-96 h-56' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1035.7048254693862!2d110.31048696599059!3d-6.972818591360223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e705fe65fb8dcd7%3A0x902fa683a6ad3cad!2smusholla%20at%20thohirin!5e0!3m2!1sen!2sid!4v1748854478172!5m2!1sen!2sid" />
                     </FadeInUp>
-                    <FadeInUp delay={1.2}>
+                    <FadeInUp delay={1.1}>
                         <a 
                         href={"https://maps.app.goo.gl/7mHbH6sivCX6TZgWA"}
                         target="_blank" 
@@ -484,6 +500,10 @@ export default function WeddingIndex(){
                         <SiGooglemaps className="mr-1" /> {/* Icon with margin */}
                         Open Google Maps
                         </a>
+                    </FadeInUp>
+                    <p className="mt-4">Atau scan QRCode dibawah ini:</p>
+                    <FadeInUp delay={1.1} className="flex justify-center mx-auto">
+                        <QrCodeGenerator url="https://maps.app.goo.gl/7mHbH6sivCX6TZgWA" className=""></QrCodeGenerator>
                     </FadeInUp>
                     <img src={cornerImage} className='absolute transform scale-x-[-1] -bottom-20 sm:-bottom-32 -left-10 w-36 sm:w-56' alt="" />
                     
