@@ -5,7 +5,6 @@ import headerImage from '/image/header-img.png';
 import footerImage from '/image/footer-img.png';
 import cornerImage from "/image/corner-img.png";
 import backgroundTexture from "/image/bg-flower-texture.webp";
-import backgroundTextureMobile from "/image/bg-flower-texture-mobile.webp";
 import backgroundCard from "/image/dark-wave.jpeg";
 import cinematicWeddingAudio from "/audio/bermuara.mp3";
 import { motion, AnimatePresence, useInView } from 'framer-motion';
@@ -317,7 +316,7 @@ export default function WeddingIndex(){
     }, []);
 
     return (
-        <div className="w-screen overflow-x-hidden h-full text-black bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/image/bg-flower-texture-mobile.webp')] sm:bg-[url('/image/bg-flower-texture.webp')]">
+        <div className="w-screen overflow-x-hidden h-full text-black bg-fixed bg-center bg-cover bg-no-repeat bg-[url('/image/bg-flower-texture.webp')]">
             <div className="w-full h-screen pt-5 sm:pt-0 shadow">
                 <div className='inline-block w-full'>
                     <img src={headerImage} alt="" className="w-full opacity-60 -mt-5 sm:-mt-0" />
