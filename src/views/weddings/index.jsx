@@ -4,7 +4,7 @@ import { SiGooglemaps } from "react-icons/si";
 import headerImage from '/image/header-img.png';
 import footerImage from '/image/footer-img.png';
 import cornerImage from "/image/corner-img.png";
-import backgroundTexture from "/image/bg-flower-texture.jpeg";
+import backgroundTexture from "/image/bg-flower-texture.webp";
 import backgroundCard from "/image/dark-wave.jpeg";
 import cinematicWeddingAudio from "/audio/bermuara.mp3";
 import { motion, AnimatePresence, useInView } from 'framer-motion';
