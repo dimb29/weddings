@@ -316,7 +316,7 @@ export default function WeddingIndex(){
     }, []);
 
     return (
-        <div className="w-screen overflow-x-hidden h-full text-black bg-fixed bg-cover bg-[url('/image/bg-flower-texture.jpeg')]">
+        <div className="w-screen overflow-x-hidden h-full text-black bg-fixed bg-center bg-cover bg-[url('/image/bg-flower-texture.jpeg')]">
             <div className="w-full h-screen pt-5 sm:pt-0 shadow">
                 <div className='inline-block w-full'>
                     <img src={headerImage} alt="" className="w-full opacity-60 -mt-5 sm:-mt-0" />
