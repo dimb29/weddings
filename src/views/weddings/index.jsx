@@ -247,8 +247,18 @@ export default function WeddingIndex(){
       backgroundPosition: 'center',
     };
 
-    const audioRef = useRef(null);
-    const [isMuted, setIsMuted] = useState(true);
+    // const [norek] = useState('1360032026939');
+    // const [norek2] = useState('1360032026939');
+  
+    const copyToClipboard = (norek) => {
+      navigator.clipboard.writeText(norek)
+        .then(() => {
+          alert('Nomor rekening telah disalin: ' + norek);
+        })
+        .catch(err => {
+          alert('Terjadi kesalahan saat menyalin: ', err);
+        });
+    };
 
     const calculateTimeLeft = () => {
         const weddingDate = new Date('2025-09-25T12:00:00'); // Set your wedding date and time
@@ -275,6 +285,8 @@ export default function WeddingIndex(){
         return timeLeft;
     };
 
+    const audioRef = useRef(null);
+    const [isMuted, setIsMuted] = useState(true);
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
@@ -288,7 +300,10 @@ export default function WeddingIndex(){
     useEffect(() => {
       const playAudio = async () => {
         try {
-          await audioRef.current.play();
+            if (audioRef.current) {
+              audioRef.current.muted = isMuted;
+              await audioRef.current.play();
+            }
         } catch (error) {
           console.log("Audio playback failed:", error);
         }
@@ -301,19 +316,6 @@ export default function WeddingIndex(){
         setIsMuted((prev) => !prev)
         audioRef.current.muted = false
     }
-
-    // const [norek] = useState('1360032026939');
-    // const [norek2] = useState('1360032026939');
-  
-    const copyToClipboard = (norek) => {
-      navigator.clipboard.writeText(norek)
-        .then(() => {
-          alert('Nomor rekening telah disalin: ' + norek);
-        })
-        .catch(err => {
-          alert('Terjadi kesalahan saat menyalin: ', err);
-        });
-    };
 
     const handleScroll = () => {
       if (window.scrollY <= 5) {
@@ -344,7 +346,9 @@ export default function WeddingIndex(){
         section.scrollIntoView({ behavior: 'smooth' });
         document.body.style.overflow = 'auto';
         }
-        toggleMute()
+        // toggleMute()
+        setIsMuted(false)
+        audioRef.current.muted = false
     };
 
     useEffect(() => {
@@ -574,6 +578,12 @@ export default function WeddingIndex(){
                 <source src={cinematicWeddingAudio} type="audio/mpeg" />
                 Your browser does not support the audio element.
                 </audio>
+                <button
+                    onClick={toggleMute}
+                    className="fixed bottom-4 right-4 bg-slate-500 hover:bg-slate-600 bg-opacity-50 focus:bg-opacity-50 active:bg-opacity-50 focus:outline-none active:outline-none text-white px-4 py-2 rounded-full shadow-lg"
+                    >
+                    {isMuted ? '🔇 Music Off' : '🔊 Music On'}
+                </button>
             </div>
             <div className='hidden sm:inline-block'>
                 <img src={footerImage} className='w-full bg-white opacity-60' />
