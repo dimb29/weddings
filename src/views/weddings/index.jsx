@@ -497,7 +497,7 @@ export default function WeddingIndex(){
                         <p className='text-md sm:text-xl z-10'>Kamis, 25 September 2025</p>
                     </FadeInUp>
                     <FadeInUp delay={0.5} className="h-5 mb-8 z-10">
-                        <p className='text-md sm:text-xl'>07.00 WIB - selesai</p>
+                        <p className='text-md sm:text-xl'>08.00 WIB - selesai</p>
                     </FadeInUp>
 
                     <img src={cornerImage} className='absolute transform -right-5 sm:-right-10 w-36 sm:w-56 z-0' alt="" />
